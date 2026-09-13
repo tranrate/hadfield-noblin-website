@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hadfield + Noblin Architects</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">
+    <script type="importmap">
+      {"imports": {
+          "@m3e/web/icon": "https://cdn.jsdelivr.net/npm/@m3e/web@2/dist/all.min.js"
+      }}
+    </script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@m3e/web@2/dist/all.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@m3e/icons/dist/outlined/mail.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@m3e/icons/dist/outlined/info.js"></script>
+    <template id="slider-template">
+		  <div style="margin: 8px">
+        <link rel="stylesheet" href="./src/slider-pro/core/slider-pro.css"/>
+        <link rel="stylesheet" href="./src/slider-pro/add-ons/arrows/arrows.css"/>
+        <link rel="stylesheet" href="./src/slider-pro/add-ons/layers/layers.css"/>
+        <link rel="stylesheet" href="./src/slider-pro/add-ons/fullscreen/fullscreen.css"/>
+        <link rel="stylesheet" href="./src/slider-pro/add-ons/touch-swipe/touch-swipe.css"/>
+        <div class="slider-pro" id="slider-pro" style="overflow: clip">
+          <div class="sp-slides" id="slides">
+          </div>
+        </div>
+		  </div>
+    </template>
+    <template id="slide-template">
+      <div class="sp-slide">
+        <img src="" class="sp-image" />
+        <p class="sp-layer sp-white sp-padding"></p>
+      </div>
+    </template>	
+    <script src="./src/hn-elements-slider-pro.js" type="module" defer></script>
+  </head>
+  <body style = "margin: 0px; font-family: Roboto; :not(:defined) { visibility: hidden; };">
+    <m3e-theme color="#b7ec16" motion="expressive" strong-focus>
+      <div>
+      <m3e-app-bar>
+        <span slot="title">
+          Hadfield <svg width="18" height="18" xmlns=     "http://www.w3.org/2000/svg">
+          <line x1="9" y1="0" x2="9" y2="18" style="stroke:#b7ec16;stroke-width:3" />
+          <line x1="0" y1="9" x2="18" y2="9" style="stroke:#b7ec16;stroke-width:3" />
+          </svg> Noblin Architects
+        </span>
+        <span slot="trailing">
+          <m3e-icon-button id="about">
+            <m3e-dialog-trigger for="about-dlg">
+              <m3e-icon name="info"></m3e-icon>
+            </m3e-dialog-trigger>
+          </m3e-icon-button>
+          <m3e-tooltip for="about">About us</m3e-tooltip>
+          <m3e-icon-button id="contact">
+            <m3e-dialog-trigger for="contact-dlg">
+              <m3e-icon name="mail"></m3e-icon>
+            </m3e-dialog-trigger>
+          </m3e-icon-button>
+          <m3e-tooltip for="contact">Contact us</m3e-tooltip>
+        </span>
+      </m3e-app-bar>
+      <hn-projects></hn-projects>
+      <m3e-dialog id="about-dlg" open="true">
+        <span slot="header">
+          About Hadfield <svg width="18" height="18" xmlns= "http://www.w3.org/2000/svg">
+          <line x1="9" y1="0" x2="9" y2="18" style="stroke:#b7ec16;stroke-width:3" />
+          <line x1="0" y1="9" x2="18" y2="9" style="stroke:#b7ec16;stroke-width:3" />
+          </svg> Noblin
+        </span>
+        <p>
+          We are a well established, RIBA Chartered Architects Studio based in Corsham Wiltshire, specializing in contemporary design.
+        </p>
+        <p>
+          Our website is currently being redeveloped. Please contact us for further information.
+        </p>
+        <div slot="actions" end>
+          <m3e-button>
+            <m3e-dialog-action return-value="ok">Close</m3e-dialog-action>
+          </m3e-button>
+        </div>
+      </m3e-dialog>
+      <m3e-dialog id="contact-dlg">
+        <span slot="header">
+          Contact Hadfield <svg width="18" height="18" xmlns= "http://www.w3.org/2000/svg">
+          <line x1="9" y1="0" x2="9" y2="18" style="stroke:#b7ec16;stroke-width:3" />
+          <line x1="0" y1="9" x2="18" y2="9" style="stroke:#b7ec16;stroke-width:3" />
+          </svg> Noblin
+        </span>
+        <m3e-button variant="filled" id="mail">
+          <style>
+            div.email > span:nth-child(2) {
+             display: none;
+            } 
+          </style>
+          <div class="email">architects@<span>hadfield-</span>noblin.<span>example.</span>com</div>
+        </m3e-button>
+        <p>
+          Hadfield + Noblin Architects,<br>
+          The Old Brushworks,<br>
+          56 Pickwick Rd,<br>
+          Corsham SN13 9BX
+        </p>
+        <div>01249 714229</div>
+        <div slot="actions" end>
+          <m3e-button>
+            <m3e-dialog-action return-value="ok">Close</m3e-dialog-action>
+          </m3e-button>
+        </div>
+      </m3e-dialog>      
+    </m3e-theme>
+  </body>
+</html>
